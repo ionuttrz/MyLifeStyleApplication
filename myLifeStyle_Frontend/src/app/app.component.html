@@ -1,0 +1,21 @@
+<div class="body">
+  <div class="toolbar" role="banner">
+    <img
+      width="80"
+      alt="Logo"
+      src="assets/logo.png"
+    />
+    
+    <span><h2>myLifeStyle</h2></span>
+      <div class="spacer"></div>
+      <button routerLink="home">Home</button>
+      <button routerLink="signin" (click)="hideHome()">Sign Up</button>
+      <button routerLink="login" (click)="hideHome()">Login</button>
+      <app-logout></app-logout>
+  </div>
+  <!---
+  <app-home *ngIf="showHome"></app-home>
+  -->
+  <router-outlet></router-outlet>
+</div>
+

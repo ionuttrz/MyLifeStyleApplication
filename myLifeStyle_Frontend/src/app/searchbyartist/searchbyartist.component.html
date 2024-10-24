@@ -1,0 +1,14 @@
+<div class="form-group">
+    <label for="artist">Artist:</label>
+    <input type="text" id="artist" name="artist" [(ngModel)]="selectedArtist">
+</div>
+
+<button class="custom-button" (click)="showByArtist()">Search</button>
+
+<div class="music-container">
+    <div *ngFor="let song of songs" class="song-entry">
+        <h3>{{ song.songName }}</h3>
+        <p>Artist: {{ song.artist }}</p>
+        <p>Genre: {{ song.genre }}</p>
+    </div>
+</div>

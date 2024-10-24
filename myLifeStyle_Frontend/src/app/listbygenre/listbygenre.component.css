@@ -1,0 +1,59 @@
+.custom-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #03850e;
+    margin-top: 10px;
+    margin-right: 50px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-button:hover {
+    background-color: #08a803;
+  }
+  .song-entry {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #fff;
+  }
+
+  .music-container {
+    height: 300px; /* Set the desired height */
+    margin-top: 5px;
+    overflow-y: auto;
+  }
+  .white-font {
+    color: white;
+  }
+
+  .selector-container {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+  
+  .selector-container label {
+    font-size: 18px;
+    margin-right: 10px;
+    color: white;
+  }
+  
+  .selector-container select {
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .selector-container select:focus {
+    outline: none;
+    box-shadow: 0 0 4px #ffffff80;
+  }
+  
+  
+  

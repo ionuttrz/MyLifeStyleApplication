@@ -1,0 +1,16 @@
+#myChart {
+  width: 100%;
+  height: 300px;
+}
+  
+:host {
+  display: block;
+  width: 100%;
+}
+
+.chart-container {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+  background-color: white;
+}

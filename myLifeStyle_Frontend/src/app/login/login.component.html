@@ -1,0 +1,13 @@
+<form class="container" (ngSubmit)="onSubmit()">
+  <label for="username">Email:</label>
+  <input type="text" id="username" name="username" [(ngModel)]="user.email" required>
+  
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" [(ngModel)]="user.password" required>
+  
+  <button type="submit" (click)="userLogin()">Login</button>
+  <div class="signup-link">
+    Don't have an account? <a routerLink="/signin">Sign up</a>
+  </div>
+</form>
+  

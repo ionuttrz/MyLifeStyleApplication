@@ -1,0 +1,64 @@
+
+<div class="row">
+    <button class="button" (click)="buttonKm()">Kilometers run</button>
+    <button class="button" (click)="buttonHoursAtGym()">Hours at the gym</button>
+    <button class="button" (click)="buttonDrinkingWater()">Drinking water</button>
+    <select class="form-strategy" id="strategy" name="strategy" (change)="onStrategyChange($event)">
+        <option value="Week">Week</option>
+        <option value="Month">Month</option>
+    </select>
+</div>
+
+<div class="left">
+    <div class="left">
+        <form (ngSubmit)="onSubmit()" class="form rectangle">
+            <h2>Add Record</h2>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" class="form-control" id="date" name="date" [(ngModel)]="record.date">
+            </div>
+            <div class="form-group">
+                <label for="duration">Kilometers run:</label>
+                <input type="number" class="form-control" id="kmRun" name="kmRun" [(ngModel)]="record.kmRun">
+            </div>
+            <div class="form-group">
+                <label for="energy">Hours at the gym:</label>
+                <input type="number" class="form-control" id="hoursatgym" name="hoursatgym" [(ngModel)]="record.hoursAtTheGym">  
+            </div>
+            <div class="form-group">
+                <label for="stress">Drinking water:</label>
+                <input type="number" class="form-control" id="drinkingWater" name="drinkingWater" [(ngModel)]="record.drinkingWater">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    
+    <!-- For weekly charts -->
+    <div *ngIf="showKmChart && showWeekly">
+        <app-kmrun-chart></app-kmrun-chart>
+    </div>
+
+    <div *ngIf="showHoursAtGymChart && showWeekly"> 
+        <app-hoursatgym-chart></app-hoursatgym-chart>
+    </div>
+
+    <div *ngIf="showDrinkingWaterChart && showWeekly"> 
+        <app-drinkingwater-chart></app-drinkingwater-chart>
+    </div>
+
+
+    <!-- For monthly charts -->
+    <div *ngIf="showKmChart && showMonthly">
+        <app-kmrun-chart></app-kmrun-chart>
+    </div>
+
+    <div *ngIf="showHoursAtGymChart && showMonthly"> 
+        <app-hoursatgym-chart></app-hoursatgym-chart>
+    </div>
+
+    <div *ngIf="showDrinkingWaterChart && showMonthly"> 
+        <app-drinkingwater-chart></app-drinkingwater-chart>
+    </div>
+</div>
+
+

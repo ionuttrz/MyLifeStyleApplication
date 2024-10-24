@@ -1,0 +1,26 @@
+<div class="selector-container">
+    <label for="genreSelector" class="white-font">Genre Selector:</label>
+    <select id="genreSelector" name="genreSelector" [(ngModel)]="selectedGenre">
+      <option value="ROCK">Rock</option>
+      <option value="POP">Pop</option>
+      <option value="JAZZ">Jazz</option>
+      <option value="ELECTRONIC_DANCE">Electronic dance</option>
+      <option value="DUBSTEP">Dubstep</option>
+      <option value="TECHNO">Techno</option>
+      <option value="RandB">R&B</option>
+      <option value="COUNTRY">Country</option>
+      <option value="INDIE">Indie</option>
+      <option value="ELECTRO">Electro</option>
+      <!-- Add more genre options here -->
+    </select>
+  </div>
+
+  <button class="custom-button" (click)="showByGenre()">Search</button>
+
+  <div class="music-container">
+    <div *ngFor="let song of songs" class="song-entry">
+        <h3>{{ song.songName }}</h3>
+        <p>Artist: {{ song.artist }}</p>
+        <p>Genre: {{ song.genre }}</p>
+    </div>
+</div>

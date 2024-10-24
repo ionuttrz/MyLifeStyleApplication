@@ -1,0 +1,148 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  label {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  input {
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    width: 300px;
+    height: 40px;
+    margin-top: 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .signup-link {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  .signup-link a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+
+.card svg.material-icons path {
+  fill: #888;
+  }
+
+.card {
+  all: unset;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  background-color: #fafafa;
+  height: 40px;
+  width: 200px;
+  margin: 0 8px 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  line-height: 24px;
+  }
+
+.card.highlight-card {
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+  border: none;
+  width: auto;
+  min-width: 30%;
+  position: relative;
+  }
+
+.card.card.highlight-card span {
+  margin-left: 60px;
+  }
+  
+
+.card.highlight-card span {
+  margin-left: 72px;
+}
+
+.card.card-small {
+height: 50px;
+width: 168px;
+}
+
+.content {
+display: flex;
+margin: 32px auto 32px;
+padding: 0 16px;
+max-width: 960px;
+flex-direction: column;
+align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+.genderselect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.genderselect label {
+  font-size: 18px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.genderselect select {
+  width: 300px;
+  height: 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  color: #333333;
+}
+
+.genderselect select:focus {
+  outline: none;
+  box-shadow: 0 0 4px #ffffff80;
+}
+
+.genderselect select option {
+  font-weight: bold;
+}
+
+

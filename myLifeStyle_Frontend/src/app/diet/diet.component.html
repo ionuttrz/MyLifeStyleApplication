@@ -1,0 +1,226 @@
+<div class="container">
+<div class="body-info-container">
+    <h2 class="information-heading">Information</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="mass">Mass (kg):</label>
+        <input type="number" id="mass" name="mass" [(ngModel)]="diet.mass" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" name="height" [(ngModel)]="diet.height" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="age">Age (years):</label>
+        <input type="number" id="age" name="age" [(ngModel)]="diet.age" required>
+      </div>
+      <div class="activity">
+        <label for="activity">Activity:</label>
+          <select id="activitySelector" name="activitySelector" [(ngModel)]="diet.activity" required>
+            <option value="sedentary">Sedentary</option>
+            <option value="average">Average physical activity</option>
+            <option value="moderate">Moderate physical activity</option>
+            <option value="intense">Intense physical activity</option>
+            <option value="veryintense">Very intense physical activity</option>
+          </select>
+      </div>
+      <button type="submit">Calculate the calories</button>
+    </form>
+  </div>
+
+  <div class="text-output-container">
+    <div class="output-label">
+      <h2>Daily calorie requirement</h2>
+    </div>
+    <div class="output-value">
+      <p *ngIf="isCalculated">Your daily calorie requirement is: {{ dataValue }} calories</p>
+      <div *ngIf="0 < dataValue && dataValue < 500">
+        <p>Eating within the range of 0-500 calories per day is considered 
+          very low calorie intake and is typically not recommended for extended
+           periods of time. Very low-calorie diets should only be done under 
+           close medical supervision and for specific medical reasons.</p>
+      </div>
+      <div *ngIf="500 <= dataValue && dataValue < 1000">
+        <p>Recommendations for diet:</p>
+        <p>Focus on nutrient-dense foods that are low in calories but high in vitamins, minerals, and fiber.</p>
+        <p>Include plenty of non-starchy vegetables like leafy greens, broccoli, peppers, and cucumbers.</p>
+        <p>Incorporate lean proteins such as chicken breast, fish, tofu, or legumes.</p>
+        <p>Include whole grains in moderation, such as quinoa or brown rice.</p>
+        <p>Incorporate healthy fats in small amounts, such as avocado, nuts, or seeds.</p>
+        <p>Choose low-calorie beverages like water, unsweetened tea, or black coffee.</p>
+      </div>
+      <div *ngIf="1000 <= dataValue && dataValue < 2000">
+        <p>Recommendations for diet:</p>
+        <p>Include a variety of fruits, vegetables, lean proteins, whole grains, and healthy fats.</p>
+        <p>Make sure to include all essential nutrients by consuming a balanced diet.</p>
+        <p>Incorporate lean meats, fish, poultry, legumes, and dairy or dairy alternatives for protein.</p>
+        <p>Choose whole grains like whole wheat bread, oats, or brown rice.</p>
+        <p>Include a variety of fruits and vegetables for fiber, vitamins, and minerals.</p>
+        <p>Include healthy fats such as olive oil, nuts, seeds, and avocados.</p>
+        <p>Stay hydrated by drinking water throughout the day.</p>
+      </div>
+      <div *ngIf="2000 <= dataValue && dataValue < 3000">
+        <p>Recommendations for diet:</p>
+        <p>Macronutrients: Make sure to include all three macronutrients - carbohydrates, 
+        proteins, and fats - in your meals.</p>
+
+        <p>Carbohydrates: Choose complex carbohydrates like whole grains (e.g., brown rice, quinoa, 
+        whole wheat bread) and starchy vegetables (e.g., sweet potatoes, corn, peas) for sustained
+         energy.</p>
+         <p>Proteins: Include lean sources of protein such as skinless poultry, fish, lean meats, 
+        legumes, tofu, or Greek yogurt to support muscle growth and repair.</p>
+        <p>Fats: Include healthy fats from sources like avocados, nuts, seeds, olive oil, and fatty 
+        fish (e.g., salmon, mackerel) for essential fatty acids and fat-soluble vitamins.</p>
+    
+        <p>Fruits and vegetables: Incorporate a variety of fruits and vegetables to ensure an adequate 
+        intake of vitamins, minerals, and fiber. Aim for at least 5 servings of fruits and 
+        vegetables per day.</p>
+    
+        <p>Whole foods: Focus on whole, unprocessed foods whenever possible, as they tend to be more 
+        nutrient-dense. Avoid or limit processed foods high in added sugars, unhealthy fats, and 
+        sodium.</p>
+    
+        <p>Portion sizes: Pay attention to portion sizes to ensure you are consuming an appropriate 
+        amount of food to meet your calorie goals. Using measuring cups, a food scale, or nutrition 
+        tracking apps can help you estimate portion sizes accurately.</p>
+    
+        <p>Hydration: Drink plenty of water throughout the day to stay hydrated. Limit sugary beverages
+         and opt for water, herbal tea, or unsweetened beverages.</p>
+    
+        <p>Meal planning: Plan your meals in advance to ensure a well-balanced and calorie-appropriate 
+        diet. Include a mix of food groups in each meal and consider meal prepping to make healthy
+        eating more convenient.</p>
+    
+        <p>Individualize your needs: These guidelines are general recommendations, but everyone's 
+        nutritional needs and preferences are unique. It's important to consult with a registered 
+        dietitian or healthcare professional who can provide personalized advice based on your 
+        specific goals, dietary restrictions, and medical conditions.</p>
+      </div>
+      <div *ngIf="3000 <= dataValue && dataValue < 4000">
+        <p>Recommendations for diet:</p>
+        <p>Macronutrients: Make sure to include an appropriate balance of carbohydrates, 
+        proteins, and fats in your meals.</p>
+
+        <p>Carbohydrates: Choose a variety of complex carbohydrates like whole grains (e.g., 
+        brown rice, quinoa, oats), starchy vegetables (e.g., potatoes, corn, legumes), and 
+        fruits to provide energy.</p>
+
+        <p>Proteins: Include lean sources of protein such as poultry, lean meats, fish, eggs, 
+        legumes, dairy products, and plant-based protein sources like tofu or tempeh.</p>
+
+        <p>Fats: Incorporate healthy fats from sources like avocados, nuts, seeds, olive oil, 
+        coconut oil, and fatty fish (e.g., salmon, mackerel) for essential fatty acids.</p>
+    
+        <p>Nutrient-dense foods: Choose nutrient-dense foods that provide a wide range of vitamins,
+         minerals, and phytonutrients. Include plenty of fruits, vegetables, whole grains, lean 
+         proteins, and healthy fats.</p>
+    
+        <p>Calorie-dense foods: To reach higher calorie targets, include calorie-dense foods in your 
+        diet, such as nuts, nut butter, dried fruits, full-fat dairy products, whole eggs, and 
+        healthy oils.</p>
+    
+        <p>Adequate portion sizes: Pay attention to portion sizes to ensure you are consuming enough 
+        food to meet your calorie goals. If necessary, increase portion sizes or add extra servings 
+        of nutrient-dense foods to reach your calorie target.</p>
+    
+        <p>Balanced meals and snacks: Plan and include balanced meals and snacks throughout the day 
+        to distribute your calorie intake. Aim for three main meals and several snacks if needed.</p>
+    
+        <p>Hydration: Drink plenty of water throughout the day to stay hydrated. Consider adding 
+        calorie-free beverages like herbal tea or zero-calorie drinks to meet your hydration needs 
+        without adding additional calories.</p>
+    
+        <p>Individualize your needs: Everyone's nutritional needs and preferences are unique. It's 
+        important to consult with a registered dietitian or healthcare professional who can provide 
+        personalized advice based on your specific goals, dietary restrictions, and medical 
+        conditions.</p>
+      </div>
+      <div *ngIf="4000 <= dataValue && dataValue < 5000">
+        <p>Recommendations for diet:</p>
+        <p>Macronutrients: Make sure to include an appropriate balance of carbohydrates, proteins, and 
+        fats in your meals.</p>
+
+        <p>Carbohydrates: Choose a variety of complex carbohydrates like whole grains (e.g., brown rice, 
+        quinoa, oats), starchy vegetables (e.g., potatoes, corn, legumes), and fruits to provide energy.</p>
+        
+        <p>Proteins: Include lean sources of protein such as poultry, lean meats, fish, eggs, legumes, 
+        dairy products, and plant-based protein sources like tofu or tempeh.</p>
+        
+        <p>Fats: Incorporate healthy fats from sources like avocados, nuts, seeds, olive oil, coconut oil,
+         and fatty fish (e.g., salmon, mackerel) for essential fatty acids.</p>
+    
+        <p>Nutrient-dense foods: Choose nutrient-dense foods that provide a wide range of vitamins, 
+        minerals, and phytonutrients. Include plenty of fruits, vegetables, whole grains, lean proteins, 
+        and healthy fats.</p>
+    
+        <p>Calorie-dense foods: To reach higher calorie targets, include calorie-dense foods in your diet, 
+        such as nuts, nut butter, dried fruits, full-fat dairy products, whole eggs, and healthy oils.</p>
+    
+        <p>Larger portion sizes: Increase portion sizes of each meal to accommodate the higher calorie 
+        intake. Add additional servings of nutrient-dense foods to meet your calorie goals.</p>
+    
+        <p>Frequent meals and snacks: Plan to have regular meals and snacks throughout the day to 
+        distribute your calorie intake and provide sustained energy. Aim for three main meals and 
+        several snacks if needed.</p>
+    
+        <p>Balanced meals: Ensure each meal contains a balance of carbohydrates, proteins, and fats.
+         Include a variety of colorful fruits and vegetables to maximize nutrient intake.</p>
+    
+        <p>Hydration: Drink plenty of water throughout the day to stay hydrated. Consider adding 
+        calorie-free beverages like herbal tea or zero-calorie drinks to meet your hydration needs
+         without adding additional calories.</p>
+    
+        <p>Individualize your needs: It's important to consult with a registered dietitian or healthcare 
+        professional who can provide personalized advice based on your specific goals, dietary 
+        restrictions, and medical conditions. They can help create a customized meal plan to meet your 
+        calorie requirements and nutritional needs.</p>
+      </div>
+      <div *ngIf="5000 <= dataValue && dataValue < 6000">
+        <p>Recommendations for diet:</p>
+        <p>Macronutrients: Ensure you are consuming a well-balanced mix of carbohydrates, proteins, 
+        and fats.</p>
+
+        <p>Carbohydrates: Include a variety of complex carbohydrates such as whole grains, starchy 
+        vegetables, and fruits to provide energy.</p>
+        
+        <p>Proteins: Include lean sources of protein such as poultry, lean meats, fish, eggs, legumes, 
+        dairy products, and plant-based protein sources like tofu or tempeh.</p>
+        
+        <p>Fats: Incorporate healthy fats from sources like avocados, nuts, seeds, olive oil, coconut
+         oil, and fatty fish for essential fatty acids.</p>
+    
+        <p>Nutrient-dense foods: Choose nutrient-dense foods that provide a wide range of vitamins, 
+        minerals, and phytonutrients. Include plenty of fruits, vegetables, whole grains, lean 
+        proteins, and healthy fats.</p>
+    
+        <p>Calorie-dense foods: To reach such high calorie targets, include calorie-dense foods in 
+        your diet, such as nuts, nut butter, dried fruits, full-fat dairy products, whole eggs, 
+        and healthy oils.</p>
+    
+        <p>Larger portion sizes: Increase portion sizes of each meal and snack to accommodate the 
+        higher calorie intake. Focus on calorie-dense foods to help meet your goals.</p>
+    
+        <p>Frequent meals and snacks: Plan to have regular and frequent meals and snacks throughout 
+        the day to distribute your calorie intake and provide sustained energy. Aim for three main 
+        meals and several snacks if needed.</p>
+    
+        <p>Balanced meals: Ensure each meal contains a balance of carbohydrates, proteins, and fats. 
+        Include a variety of colorful fruits and vegetables to maximize nutrient intake.</p>
+    
+        <p>Hydration: Drink plenty of water throughout the day to stay hydrated. Consider adding 
+        calorie-free beverages like herbal tea or zero-calorie drinks to meet your hydration 
+        needs without adding additional calories.</p>
+    
+        <p>Individualize your needs: It's crucial to consult with a registered dietitian or 
+        healthcare professional who can provide personalized advice based on your specific 
+        goals, dietary restrictions, and medical conditions. They can help create a customized 
+        meal plan that suits your unique calorie requirements and nutritional needs.</p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+  
+  

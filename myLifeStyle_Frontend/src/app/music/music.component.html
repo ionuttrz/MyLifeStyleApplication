@@ -1,0 +1,45 @@
+<form class="form-container" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="songName">Song Name:</label>
+      <input type="text" id="songName" name="songName" [(ngModel)]="music.songName" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="artist">Artist:</label>
+      <input type="text" id="artist" name="artist" [(ngModel)]="music.artist" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="genre">Genre:</label>
+      <select id="genre" name="genre" [(ngModel)]="music.genre" required>
+        <option value="ROCK">Rock</option>
+        <option value="POP">Pop</option>
+        <option value="JAZZ">Jazz</option>
+        <option value="ELECTRONIC_DANCE">Electronic dance</option>
+        <option value="DUBSTEP">Dubstep</option>
+        <option value="TECHNO">Techno</option>
+        <option value="RandB">R&B</option>
+        <option value="COUNTRY">Country</option>
+        <option value="INDIE">Indie</option>
+        <option value="ELECTRO">Electro</option>
+      </select>
+    </div>
+  
+    <button type="submit">Submit</button>
+  </form>
+
+
+<button class="custom-button" (click)="showAllMusic()">Show All Music</button>
+<button class="custom-button" (click)="listByGenre()">List by Genre</button>
+<button class="custom-button" (click)="searchByArtist()">Search by Artist</button>
+
+<!-- Show All Music -->
+<app-showallmusic *ngIf="showAllMusicComponent"></app-showallmusic>
+
+<!-- List by Genre -->
+<app-listbygenre *ngIf="listByGenreComponent"></app-listbygenre>
+
+<!-- Search by Artist -->
+<app-searchbyartist *ngIf="searchByArtistComponent"></app-searchbyartist>
+
+  
