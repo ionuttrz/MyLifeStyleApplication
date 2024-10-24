@@ -1,4 +1,4 @@
-# MyLifeStyleApplication
+# MyLifeStyle Application
 This application is is a comprehensive tool for monitoring daily activities and managing lifestyle data. It allows users to track activities like running distance, gym hours, water intake, and favorite music, while also calculating daily calorie needs based on gender.
 
 The myLifeStyle application is a comprehensive lifestyle monitoring tool designed to track and record various aspects of an individual's daily activities. This documentation serves as a project specification for the myLifeStyle application, outlining its key features and functionality. 
